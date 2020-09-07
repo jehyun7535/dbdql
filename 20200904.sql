@@ -123,9 +123,9 @@ where 실습 13
 SELECT *
 FROM emp
 WHERE job IN ('SALESMAN')
-OR empno BETWEEN 7800 AND 7899
+OR (empno BETWEEN 7800 AND 7899
 OR empno BETWEEN 780 AND 789
-OR empno = 78
+OR empno = 78);
 
 정렬
 **************매우중요***************

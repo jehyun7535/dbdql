@@ -317,7 +317,27 @@ USER_TABLES : 오라클에서 관리하는 테이블(뷰)
     SELECT userid 아이디,  usernm 이름, alias 별명
     FROM users
     WHERE userid = 'brown' OR userid = 'cony' OR userid = 'sally';
+    WHERE 절 : 스프레드 시트
+               - filter : 전체 데이터중에서 내가 원하는 행만 나오도록 제한
+               비교 연산 <, >, =, !=, <>, <=, >=
+               
+    BETWEEN AND 
+    IN
+    연산자를 배울 때 (복습할 때) 기억할 부분은 해당 연산자 x항 연산자 인지하자    
     
-    
-
-    
+    1           +           5
+ 피연산자      연산자      피연산자
+ 
+ a++ : 단항연산자
+ 
+ int a = b > 5 ? 10 : 20;
+ 
+ BETWEEN AND : 비교대상 BETWEEN 시자값 AND 종료값
+ IN :   비교대상 IN (값1, 값2...)
+ LIKE : 비교대상 LIKE '매칭문자열 % _ '
+ 
+ WHERE BETWEEN 30 AND 50;
+ 
+ SELECT *
+ FROM emp
+ WHERE 10 BETWEEN 10 AND 50;
