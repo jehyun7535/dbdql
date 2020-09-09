@@ -10,13 +10,13 @@ SELECT SYSDATE, TO_CHAR(SYSDATE, 'DD-MM-YYYY'),
 FROM dual;
 
 '20200908' == > '2020/09/08'
-SELECT ename,
+        SELECT ename,
      --   SUBSTR('20200908',1,4)
         hiredate,
         TO_CHAR(hiredate +1, 'yyyy/mm/dd hh24:mi:ss') h2,
         TO_CHAR(hiredate +1/24, 'yyyy/mm/dd hh24:mi:ss') h3,
         TO_CHAR(TO_DATE('20200908', 'YYYY-MM/DD'),'YYYY/MM/DD')h4
-FROM emp;
+        FROM emp;
 
 날짜 : 일자 +시분초
 2020년 9월 8일 14시 10분 5초 == '20200908' ==2020년9월8일 00시 0분 0초
