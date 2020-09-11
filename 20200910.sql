@@ -81,7 +81,7 @@ GROUP BY deptno;
         SELECT deptno, COUNT(*)
          FROM emp
          WHERE sal > 1000
-         GROUP BY deptno
+         GROUP BY deptno;
 
 grp1
 
@@ -119,10 +119,19 @@ GROUP BY TO_CHAR(hiredate, 'YYYYMM');
 
 grp5
  
-SELECT *    
 SELECT TO_CHAR(hiredate, 'YYYY') hire_yyyy, count(*) cnt
 FROM emp
 GROUP BY TO_CHAR(hiredate, 'YYYY');
+
+grp6
+SELECT count(*) cnt
+FROM dept;
+
+grp7
+
+SELECT count(COUNT(*)) cnt
+FROM emp
+GROUP BY deptno;
 
 
 ******WHERE + JION SELECT SQL의 모든 것******
@@ -175,7 +184,7 @@ WHERE emp.deptno = dept.deptno;
 
 인라인뷰 별칭처럼, 테이블 별칭을 부여하는게 가능
 SELECT *
-FROM emp, dept d
+FROM emp, dept
 WHERE emp.deptno = dept.deptno;
 
 SELECT *
@@ -210,7 +219,7 @@ AND emp.deptno IN (20, 30);
 1. SELF JOIN  : 조인하는 테이블이 서로 같은 경우
 
 SELECT e.ename, e.ename, e.mgr, m.ename
-FROM emp e JOIN emp m ON ( e.mgr = m.empno)
+FROM emp e JOIN emp m ON ( e.mgr = m.empno);
 
 ORACLE 문법   
 SELECT e.ename, e.ename, e.mgr, m.ename
@@ -240,6 +249,37 @@ WHERE sal BETWEEN losal AND hisal;
 SELECT empno, ename, sal, grade
 FROM emp JOIN salgrade ON ( sal >= losal AND sal <= hisal);
     
+join0
+SELECT *
+FROM dept;
 
+SELECT *
+FROM emp;
 
-    
+SELECT e.empno, e.ename, d.deptno, d.dname
+FROM emp e, dept d
+WHERE e.deptno = d.deptno
+ORDER BY deptno;
+
+join0_1
+SELECT e.empno, e.ename, d.deptno, d.dname
+FROM emp e, dept d
+WHERE e.deptno = d.deptno AND e.deptno IN (10, 30);
+
+join0_2
+SELECT e.empno, e.ename, e.sal, d.deptno, d.dname
+FROM emp e, dept d
+WHERE e.deptno = d.deptno AND sal > 2500
+ORDER BY deptno;
+
+join0_3
+SELECT e.empno, e.ename, e.sal, d.deptno, d.dname
+FROM emp e, dept d
+WHERE e.deptno = d.deptno AND sal > 2500 AND empno > 7600
+ORDER BY deptno;
+
+join0_4
+SELECT e.empno, e.ename, e.sal, d.deptno, d.dname
+FROM emp e, dept d
+WHERE e.deptno = d.deptno AND sal > 2500 AND empno > 7600
+AND d.dname = 'RESEARCH';
