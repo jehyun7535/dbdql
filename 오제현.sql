@@ -42,3 +42,4 @@ grp7
 SELECT count(COUNT(*)) cnt
 FROM emp
 GROUP BY deptno;
+

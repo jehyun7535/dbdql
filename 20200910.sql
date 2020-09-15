@@ -266,6 +266,7 @@ SELECT e.empno, e.ename, d.deptno, d.dname
 FROM emp e, dept d
 WHERE e.deptno = d.deptno AND e.deptno IN (10, 30);
 
+
 join0_2
 SELECT e.empno, e.ename, e.sal, d.deptno, d.dname
 FROM emp e, dept d
@@ -282,4 +283,5 @@ join0_4
 SELECT e.empno, e.ename, e.sal, d.deptno, d.dname
 FROM emp e, dept d
 WHERE e.deptno = d.deptno AND sal > 2500 AND empno > 7600
-AND d.dname = 'RESEARCH';
+AND d.dname = 'RESEARCH'
+ORDER BY deptno;

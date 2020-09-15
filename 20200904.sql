@@ -93,7 +93,8 @@ date type 표현
 where 실습 8
 SELECT *
 FROM emp
-WHERE deptno != 10 AND hiredate >= TO_DATE('1981/06/01', 'yyyy/mm/dd')
+WHERE deptno != 10 
+AND hiredate >= TO_DATE('1981/06/01', 'yyyy/mm/dd')
 
 where 실습 9
 SELECT *
