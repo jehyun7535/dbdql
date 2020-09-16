@@ -18,6 +18,20 @@ FROM cycle c, product p
 WHERE p.pid = c.pid(+)
 AND c.cid(+) = :cid;
 
+OUTERJOIN5]
+SELECT p.pid, p.pnm, :cid cid, NVL(a.cnm, 'brown'), NVL(c.day, 0) day,
+NVL(c.cnt, 0) cnt
+FROM cycle c, product p, customer a
+WHERE p.pid = c.pid(+)
+AND a.cid(+) = c.cid
+AND c.cid(+) = :cid;
+
+SELECT *
+FROM customer;
+
+SELECT *
+FROM cycle;
+
 INNER JOIN : 조인이 성공하는 데이터만 조회가 되는 조인 방식
 OUTER JOIN : 조인에 실패해도 기준으로 정한 테이블의 컬럼은 조회가
              되는 조인 방식

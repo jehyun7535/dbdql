@@ -57,13 +57,11 @@ j.job_id, j.job_title
 FROM  employees e, jobs j
 WHERE e.job_id = j.job_id;
 
-join13
-SELECT e.employee_id mgr_id, 
-CONCAT(e.first_name, e.last_name) mgr_name, e.employee_id, 
-CONCAT(e.first_name, e.last_name) name,
+join13  (x)
+SELECT e.employee_id mgr_id, CONCAT(e.first_name, e.last_name) mgr_name, 
+e.employee_id, CONCAT(e.first_name, e.last_name) name,
 j.job_id, j.job_title
 FROM employees e,employees d,jobs j
-WHERE d.job_id=j.job_id
-AND d.manager_id=e.employee_id;
-
+WHERE d.manager_id=e.employee_id
+AND d.job_id=j.job_id;
 
