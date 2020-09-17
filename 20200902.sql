@@ -264,14 +264,14 @@ USER_TABLES : 오라클에서 관리하는 테이블(뷰)
     비교연산자를 이용한 풀이
     SELECT *
     FROM emp
-    WHERE sal >= 1000
-    AND sal <= 2000;
-    
+    WHERE sal >= 1000 AND sal <= 2000;
+
     조건에 맞는 데이터 조회하기 실습 where1
     
     SELECT ename, hiredate
     FROM emp
-    WHERE hiredate BETWEEN TO_DATE('1982/01/01', 'yyyy/mm/dd')  AND TO_DATE('1983/01/01', 'yyyy/mm/dd')
+    WHERE hiredate BETWEEN TO_DATE('1982/01/01', 'yyyy/mm/dd')  
+    AND TO_DATE('1983/01/01', 'yyyy/mm/dd');
     
     실습 where2
     

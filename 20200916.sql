@@ -2,7 +2,7 @@
 SELECT *
 FROM emp
 WHERE sal > (SELECT AVG(sal)
-            FROM emp);
+             FROM emp);
             
 본인 속한 부서의 급여 평균보다 높은 급여를 받는 사람들을 조회
 SELECT *
@@ -59,7 +59,7 @@ EXISTS 연산자 : 조건을 만족하는 서브 쿼리의 행이 존재하면 T
 매니저가 존재하는 사원 정보 조회 
 SELECT *
 FROM emp e
-WHERE EXISTS ( SELECT *
+WHERE EXISTS (SELECT *
                 FROM emp m
                 WHERE e.mgr = m.empno);
 
