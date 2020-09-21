@@ -161,6 +161,15 @@ CREATE TABLE dept_test (
     CONSTRAINT PK_dept_test PRIMARY KEY (deptno, dname)
 );
 
+CREATE TABLE dept_test(
+
+    deptno NUMBER(2) CONSTRAINT PK_dept_test PRIMARY KEY,
+
+    dname VARCHAR2(14) NOT NULL,
+
+    loc VARCHAR2(13)
+
+);
 복합 컬럼에 대한 제약조건은 컬럼 레벨에서는 설정이 불가하고
 테이블 레벨, 혹은 테이블 생성후 제약조건을 추가하는 형태에서만 가능
 
@@ -357,8 +366,8 @@ DROP TABLE emp_test;
 DROP TABLE dept_test;
 
 CREATE TABLE emp_test (
-    empno NUMBER(4)
-    ename VARCHAR2(14)
+    empno NUMBER(4),
+    ename VARCHAR(14)
     );
     
     INSERT INTO emp_test VALUES (9000, 'brown');
@@ -489,6 +498,45 @@ ALTER TABLE emp_test ADD CONSTRAINT PK_EMP_TEST PRIMARY KEY (empno);
     참조하는 FOREIGN KEY 제약 조건 추가
 ALTER TABLE emp_test ADD CONSTRAINT FK_emp_tset_dept_test 
 FOREIGN KEY (deptno) REFERENCES dept_test (deptno);
+DESC emp;
 
+CREATE TABLE emp_test(
+empno NUMBER(4),
+ename VARCHAR2(10),
+deptno NUMBER(2) REFERENCES dept_test (deptno)
+);
 
+ CREATE TABLE dept_test(
+ deptno NUMBER(2) PRIMARY KEY,
+ dname VARCHAR2(14),
+ loc VARCHAR2(13)
+ );
+ 
+INSERT INTO dept_test VALUES (90, 'ddit', daejeon);
+INSERT INTO dept_test VALUES (90, 'ddit', daejeon);
+CREATE TABLE dept_test(
 
+    deptno NUMBER(2),
+
+    dname VARCHAR2(14),
+
+    loc VARCHAR2(13),
+
+    CONSTRAINT PK_dept_test PRIMARY KEY (deptno, dname)
+
+);
+ DROP TABLE dept_test;
+  DROP TABLE emp_test;
+  CREATE TABLE dept_test(
+ deptno NUMBER(2) ,
+ dname VARCHAR2(14)
+ );
+ 
+  CREATE TABLE emp_test(
+ empno NUMBER(2) ,
+ ename VARCHAR2(10),
+ deptno NUMBER(2)
+ );
+ 
+ SELECT *
+ FROM emp_test;
