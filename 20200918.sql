@@ -540,3 +540,6 @@ CREATE TABLE dept_test(
  
  SELECT *
  FROM emp_test;
+ 
+ SELECT *
+ FROM dept_test;
