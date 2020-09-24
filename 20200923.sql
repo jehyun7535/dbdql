@@ -72,7 +72,7 @@ WHERE 1 = 1
 CREATE UNIQUE INDEX idx_emp_u_01 ON emp (empno);
 CREATE INDEX idx_emp_02 ON emp (ename);
 CREATE INDEX idx_emp_03 ON emp (deptno, sal, mgr, hiredate);
-
+CREATE INDEX idx_emp_03 ON emp (deptno, sal, loc);
 인덱스 사용에 있어서 중요한점
 인덱스 구성컬럼이 모두 NULL이면 인덱스에 저장을 하지 않는다
 즉 테이블 접근을 해봐야 해당 행에 대한 정보를 알 수 있다
