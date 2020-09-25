@@ -1,3 +1,4 @@
+
 DELETE emp_test;
 DELETE emp_test2;
 COMMIT;
